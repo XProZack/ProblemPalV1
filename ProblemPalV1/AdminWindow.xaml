@@ -1,0 +1,43 @@
+﻿<Window x:Class="ProblemPalV1.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="500" Width="950">
+    <Grid>
+        <Grid>
+            <ScrollViewer>
+                <!-- Content Grid -->
+                <Grid>
+
+                    <!-- Header Rectangle -->
+                    <Rectangle Fill="LightBlue" Height="60" VerticalAlignment="Top" Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Window}}"/>
+
+                    <!-- Image Panel in the Header -->
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,10,10,0">
+                        <Image Source="Images/logo.png" Width="50" Height="50" Stretch="UniformToFill"/>
+                    </StackPanel>
+
+                    <!-- Text Box and Button -->
+                    <StackPanel Margin="0,80,0,0" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <Border BorderThickness="1" BorderBrush="Black" CornerRadius="5">
+                                <TextBox x:Name="Complaint" Width="200" Height="30" Margin="5" Text="What's on your mind?"/>
+                            </Border>
+                            <Border BorderThickness="1" BorderBrush="Black" CornerRadius="5" Margin="5">
+                                <Button x:Name="Post" Content="Post" Width="100" Height="30" Background="LightBlue" Click="Post_Click"/>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+                    
+                    <!-- Posts w/ Approve and Delete -->
+                    <StackPanel x:Name="PostsContainer" HorizontalAlignment="Center" Width="500" Margin="0,200,0,4" />
+
+            
+                    
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Window>
